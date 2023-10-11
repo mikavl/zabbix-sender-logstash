@@ -1,0 +1,1911 @@
+zabbix_export:
+  version: '6.0'
+  date: '2023-10-11T17:56:06Z'
+  groups:
+    - uuid: 6f59b6bd4db44e61931e415be7356935
+      name: Templates/Logstash
+  templates:
+    - uuid: 4fc17325094e49438e2d7f5c87606dab
+      template: Logstash
+      name: Logstash
+      templates:
+        - name: 'Logstash main pipeline'
+      groups:
+        - name: Templates/Logstash
+      items:
+        - uuid: f242fb00efb9452482c0693e3f340381
+          name: 'Logstash: Ephemeral ID'
+          type: TRAP
+          key: logstash.ephemeral_id
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: 550d517c20af48cc9fb4c0b63a6a639f
+          name: 'Logstash: Events duration'
+          type: TRAP
+          key: logstash.events.duration_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 5d6cd32c03d34201aecc41bdb05af905
+          name: 'Logstash: Events filtered'
+          type: TRAP
+          key: logstash.events.filtered
+          delay: '0'
+        - uuid: 246de6e161ab4e178b1d42d111e8752c
+          name: 'Logstash: Events in'
+          type: TRAP
+          key: logstash.events.in
+          delay: '0'
+        - uuid: 1b8b1ee106024106b92f9e72396821da
+          name: 'Logstash: Events out'
+          type: TRAP
+          key: logstash.events.out
+          delay: '0'
+        - uuid: ab2c98687cb142408e034f486faefc49
+          name: 'Logstash: Events queue push duration'
+          type: TRAP
+          key: logstash.events.queue_push_duration_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 4a47ffabcd5c45318d6d726bb6ada21e
+          name: 'Logstash: Filter flow throughput, current'
+          type: TRAP
+          key: logstash.flow.filter_throughput.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 8b2258a5380a46a4bde8d4939841e570
+          name: 'Logstash: Filter flow throughput, last 1 hour'
+          type: TRAP
+          key: logstash.flow.filter_throughput.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 29a7f24dc0204e7491f8f72b2b2b5906
+          name: 'Logstash: Filter flow throughput, last 1 minute'
+          type: TRAP
+          key: logstash.flow.filter_throughput.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 2eca3a91350c46e4a854771aaa0464d8
+          name: 'Logstash: Filter flow throughput, last 5 minutes'
+          type: TRAP
+          key: logstash.flow.filter_throughput.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: c4bbdac8f8af43d9b602c578056e2015
+          name: 'Logstash: Filter flow throughput, last 15 minutes'
+          type: TRAP
+          key: logstash.flow.filter_throughput.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 66e4d52e38784aae907f6eed32bae357
+          name: 'Logstash: Filter flow throughput, lifetime'
+          type: TRAP
+          key: logstash.flow.filter_throughput.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: cf5bbd79ff2249a290bc29c5b8ae2b43
+          name: 'Logstash: Input flow throughput, current'
+          type: TRAP
+          key: logstash.flow.input_throughput.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: c23e6a89739849d6ade8064112a8c88f
+          name: 'Logstash: Input flow throughput, last 1 hour'
+          type: TRAP
+          key: logstash.flow.input_throughput.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 13fa08c2acce4c658d65214cc31f0e4f
+          name: 'Logstash: Input flow throughput, last 1 minute'
+          type: TRAP
+          key: logstash.flow.input_throughput.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 85f1db1c1b854df7ba8436378c7fdc2b
+          name: 'Logstash: Input flow throughput, last 5 minutes'
+          type: TRAP
+          key: logstash.flow.input_throughput.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 76693d07c38f4ca48011042beab384a3
+          name: 'Logstash: Input flow throughput, last 15 minutes'
+          type: TRAP
+          key: logstash.flow.input_throughput.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 56ffbdc987964afd985a7b1a86b75da9
+          name: 'Logstash: Input flow throughput, lifetime'
+          type: TRAP
+          key: logstash.flow.input_throughput.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: e02d5bcd5227433997d240a3158c7dec
+          name: 'Logstash: Output flow throughput, current'
+          type: TRAP
+          key: logstash.flow.output_throughput.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 80b055a183274abab9bdab7d34a789e3
+          name: 'Logstash: Output flow throughput, last 1 hour'
+          type: TRAP
+          key: logstash.flow.output_throughput.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: f27261111656454a90c54a7f12e9bdda
+          name: 'Logstash: Output flow throughput, last 1 minute'
+          type: TRAP
+          key: logstash.flow.output_throughput.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 137ce54868af43f186fe7281af7e6465
+          name: 'Logstash: Output flow throughput, last 5 minutes'
+          type: TRAP
+          key: logstash.flow.output_throughput.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 06a09ad059184474b76555ad014d9b64
+          name: 'Logstash: Output flow throughput, last 15 minutes'
+          type: TRAP
+          key: logstash.flow.output_throughput.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: e7b0601b5e1a4da382e92726ac68867d
+          name: 'Logstash: Output flow throughput, lifetime'
+          type: TRAP
+          key: logstash.flow.output_throughput.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 8796cf74dd494b33bca60489f2796618
+          name: 'Logstash: Flow queue backpressure, current'
+          type: TRAP
+          key: logstash.flow.queue_backpressure.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 76404976081f433f9463599792092530
+          name: 'Logstash: Flow queue backpressure, last 1 hour'
+          type: TRAP
+          key: logstash.flow.queue_backpressure.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 375130c6454f4a8fb1ffa2f964bdbdfe
+          name: 'Logstash: Flow queue backpressure, last 1 minute'
+          type: TRAP
+          key: logstash.flow.queue_backpressure.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: f7f3c36e6e2e48d6af1d3f3b7669f0ed
+          name: 'Logstash: Flow queue backpressure, last 5 minutes'
+          type: TRAP
+          key: logstash.flow.queue_backpressure.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 82ff6d983e4d4b0586d9323f7b0e4ef1
+          name: 'Logstash: Flow queue backpressure, last 15 minutes'
+          type: TRAP
+          key: logstash.flow.queue_backpressure.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: d12413417dd24c229b34183315233658
+          name: 'Logstash: Flow queue backpressure, lifetime'
+          type: TRAP
+          key: logstash.flow.queue_backpressure.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: ba1c44ebc6bb4776b2ab1c7e43a47ff3
+          name: 'Logstash: Flow worker concurrency, current'
+          type: TRAP
+          key: logstash.flow.worker_concurrency.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 788ae1aafe614f3ba4aed802c542cc9f
+          name: 'Logstash: Flow worker concurrency, last 1 hour'
+          type: TRAP
+          key: logstash.flow.worker_concurrency.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 2e7d8d848cb14d8db4705626a372a0e7
+          name: 'Logstash: Flow worker concurrency, last 1 minute'
+          type: TRAP
+          key: logstash.flow.worker_concurrency.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: d05c3ca113ee4714800d76428cba5b8c
+          name: 'Logstash: Flow worker concurrency, last 5 minutes'
+          type: TRAP
+          key: logstash.flow.worker_concurrency.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: ec0896b4949142e5bd123cacca4b8bae
+          name: 'Logstash: Flow worker concurrency, last 15 minutes'
+          type: TRAP
+          key: logstash.flow.worker_concurrency.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 450c2f99feb14d6d98cecfd5cf125d88
+          name: 'Logstash: Flow worker concurrency, lifetime'
+          type: TRAP
+          key: logstash.flow.worker_concurrency.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 754cc36ba4194ae1be21dad154f5e9fa
+          name: 'Logstash: Host'
+          type: TRAP
+          key: logstash.host
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: 2031fb3b584f40af9df9be8bf25cc851
+          name: 'Logstash: HTTP address'
+          type: TRAP
+          key: logstash.http_address
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: 27b53fce033c4d93b5c7a92ce13be3e1
+          name: 'Logstash: ID'
+          type: TRAP
+          key: logstash.id
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: ecc31e5a738040c399abca9470e481e5
+          name: 'Logstash: JVM old memory pool garbage collection count'
+          type: TRAP
+          key: logstash.jvm.gc.collectors.old.collection_count
+          delay: '0'
+        - uuid: 6a56fc7af682462bacd2108010e9ed71
+          name: 'Logstash: JVM old memory pool garbage collection time'
+          type: TRAP
+          key: logstash.jvm.gc.collectors.old.collection_time_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 08fa8510379e4bd9896a39a23515c7da
+          name: 'Logstash: JVM young memory pool garbage collection count'
+          type: TRAP
+          key: logstash.jvm.gc.collectors.young.collection_count
+          delay: '0'
+        - uuid: 5e422e2dc7d242e599d40f37704a23f8
+          name: 'Logstash: JVM young memory pool garbage collection time'
+          type: TRAP
+          key: logstash.jvm.gc.collectors.young.collection_time_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 3f0eb83b4a504d96bccaeb6b6b96773b
+          name: 'Logstash: JVM heap memory committed'
+          type: TRAP
+          key: logstash.jvm.mem.heap_committed_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 59abebca114f4f019d762642cded01b3
+          name: 'Logstash: JVM heap memory maximum'
+          type: TRAP
+          key: logstash.jvm.mem.heap_max_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 648a121da18d4b8886a0194b2d1c066f
+          name: 'Logstash: JVM heap memory used'
+          type: TRAP
+          key: logstash.jvm.mem.heap_used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 468b08964dc94c9eb1530dbb0279dc03
+          name: 'Logstash: JVM heap memory used, percentage'
+          type: TRAP
+          key: logstash.jvm.mem.heap_used_percent
+          delay: '0'
+          units: '%'
+        - uuid: 58be7da224c74b0f8770aa4d1a345675
+          name: 'Logstash: JVM non-heap memory committed'
+          type: TRAP
+          key: logstash.jvm.mem.non_heap_committed_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 4ddf7aa337a14f68bc0ce8ed7a21b7dc
+          name: 'Logstash: JVM non-heap memory used'
+          type: TRAP
+          key: logstash.jvm.mem.non_heap_used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 680cc2f841d44b64839109ec063f5479
+          name: 'Logstash: JVM old memory pool committed'
+          type: TRAP
+          key: logstash.jvm.mem.pools.old.committed_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 55f46d89bf214d48a3fa3ef86b887e1c
+          name: 'Logstash: JVM old memory pool maximum'
+          type: TRAP
+          key: logstash.jvm.mem.pools.old.max_in_bytes
+          delay: '0'
+          units: B
+        - uuid: df914ac1ad544141a5dbbe5b79cf766f
+          name: 'Logstash: JVM old memory pool maximum, peak'
+          type: TRAP
+          key: logstash.jvm.mem.pools.old.peak_max_in_bytes
+          delay: '0'
+          units: B
+        - uuid: cdf4917ab2f04c0bb3a95c7ca0666e09
+          name: 'Logstash: JVM old memory pool used, peak'
+          type: TRAP
+          key: logstash.jvm.mem.pools.old.peak_used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: f179e9e7db3f4c43943656223e820b46
+          name: 'Logstash: JVM old memory pool used'
+          type: TRAP
+          key: logstash.jvm.mem.pools.old.used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: ef1d455612fe4d46a2ca95699d57a9a1
+          name: 'Logstash: JVM survivor memory pool committed'
+          type: TRAP
+          key: logstash.jvm.mem.pools.survivor.committed_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 942dfbfde44c4da69f70c4c5b782de17
+          name: 'Logstash: JVM survivor memory pool maximum'
+          type: TRAP
+          key: logstash.jvm.mem.pools.survivor.max_in_bytes
+          delay: '0'
+          value_type: FLOAT
+          units: B
+        - uuid: 0bb1bb0060124a67a17e8b8bc40176c9
+          name: 'Logstash: JVM survivor memory pool maximum, peak'
+          type: TRAP
+          key: logstash.jvm.mem.pools.survivor.peak_max_in_bytes
+          delay: '0'
+          value_type: FLOAT
+          units: B
+        - uuid: 18074bfffc664876b044c8e7414620de
+          name: 'Logstash: JVM survivor memory pool used, peak'
+          type: TRAP
+          key: logstash.jvm.mem.pools.survivor.peak_used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 9e299e8082e14588b050ad2919c5a5d7
+          name: 'Logstash: JVM survivor memory pool used'
+          type: TRAP
+          key: logstash.jvm.mem.pools.survivor.used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 8ba5866236124803bc36e205b3013660
+          name: 'Logstash: JVM young memory pool committed'
+          type: TRAP
+          key: logstash.jvm.mem.pools.young.committed_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 2d82abc9bf514fd7b6f694b6803fac54
+          name: 'Logstash: JVM young memory pool maximum'
+          type: TRAP
+          key: logstash.jvm.mem.pools.young.max_in_bytes
+          delay: '0'
+          value_type: FLOAT
+          units: B
+        - uuid: 8bd3f5f0b2f744118f3daad1bb17cbd6
+          name: 'Logstash: JVM young memory pool maximum, peak'
+          type: TRAP
+          key: logstash.jvm.mem.pools.young.peak_max_in_bytes
+          delay: '0'
+          value_type: FLOAT
+          units: B
+        - uuid: 7cf954269ca241c0b54ef0bc97f870e8
+          name: 'Logstash: JVM young memory pool used, peak'
+          type: TRAP
+          key: logstash.jvm.mem.pools.young.peak_used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: dffdfa9c08f64608ac8b0e31917ee485
+          name: 'Logstash: JVM young memory pool used'
+          type: TRAP
+          key: logstash.jvm.mem.pools.young.used_in_bytes
+          delay: '0'
+          units: B
+        - uuid: 44347748c48845dfb89a14f9fc0023b5
+          name: 'Logstash: JVM threads, count'
+          type: TRAP
+          key: logstash.jvm.threads.count
+          delay: '0'
+        - uuid: 5bd890b81c6142b3bce254fc0a3f305b
+          name: 'Logstash: JVM threads, peak count'
+          type: TRAP
+          key: logstash.jvm.threads.peak_count
+          delay: '0'
+        - uuid: 38556ea56be14452ac63771c9304926a
+          name: 'Logstash: JVM uptime'
+          type: TRAP
+          key: logstash.jvm.uptime_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 7c1dfa9c74904f359aaf784a75c82cfd
+          name: 'Logstash: Name'
+          type: TRAP
+          key: logstash.name
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: 0b157f74ff0b43b792899982743f35e8
+          name: 'Logstash: Pipeline batch delay'
+          type: TRAP
+          key: logstash.pipeline.batch_delay
+          delay: '0'
+        - uuid: d0ad3e633215428ca280a69eb100aeae
+          name: 'Logstash: Pipeline batch size'
+          type: TRAP
+          key: logstash.pipeline.batch_size
+          delay: '0'
+        - uuid: 9637c7827222433c972330dd8ad7864b
+          name: 'Logstash: Pipeline workers'
+          type: TRAP
+          key: logstash.pipeline.workers
+          delay: '0'
+        - uuid: 4e328e11b1fc4899bce12ab9184865b4
+          name: 'Logstash: Process CPU load average (1 min)'
+          type: TRAP
+          key: logstash.process.cpu.load_average.1m
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 95ae92bea4cb4887a8ae9f69297d056d
+          name: 'Logstash: Process CPU load average (5 min)'
+          type: TRAP
+          key: logstash.process.cpu.load_average.5m
+          delay: '0'
+          value_type: FLOAT
+        - uuid: d903a32d09e64b31a195a322bdaf76b6
+          name: 'Logstash: Process CPU load average (15 min)'
+          type: TRAP
+          key: logstash.process.cpu.load_average.15m
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 137b55a680b8436a872fe80f52b6455e
+          name: 'Logstash: Process CPU, percentage'
+          type: TRAP
+          key: logstash.process.cpu.percent
+          delay: '0'
+          value_type: FLOAT
+          units: '%'
+        - uuid: 179eca6619b14f069281574d72fe5a37
+          name: 'Logstash: Process CPU, total'
+          type: TRAP
+          key: logstash.process.cpu.total_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: dc5409d955254d1dbbf4eff32b5137db
+          name: 'Logstash: Process file descriptors, maximum'
+          type: TRAP
+          key: logstash.process.max_file_descriptors
+          delay: '0'
+        - uuid: 7e4fb23e3f70423ebaecc37f27ba29ce
+          name: 'Logstash: Process memory, total virtual'
+          type: TRAP
+          key: logstash.process.mem.total_virtual_in_bytes
+          delay: '0'
+          units: B
+        - uuid: c2e6dcfb68364fa7a59a13a9af6122bf
+          name: 'Logstash: Process file descriptors, open'
+          type: TRAP
+          key: logstash.process.open_file_descriptors
+          delay: '0'
+        - uuid: 01a6fc0607694bd78cd482dfa897ea1c
+          name: 'Logstash: Process file descriptors, peak open'
+          type: TRAP
+          key: logstash.process.peak_open_file_descriptors
+          delay: '0'
+        - uuid: 00bc986f8c6e4af2a749f66ac10f4127
+          name: 'Logstash: Snapshot'
+          type: TRAP
+          key: logstash.snapshot
+          delay: '0'
+          valuemap:
+            name: Boolean
+        - uuid: ea52767b1ecd4893abfc583d05010603
+          name: 'Logstash: Status'
+          type: TRAP
+          key: logstash.status
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+        - uuid: 051e3bd0f6d54fcdb9e132f1fb8f3a74
+          name: 'Logstash: Version'
+          type: TRAP
+          key: logstash.version
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+      dashboards:
+        - uuid: 0e465621af494f68a4ce4d47c0fc302b
+          name: Logstash
+          pages:
+            - widgets:
+                - type: ITEM
+                  name: Version
+                  width: '3'
+                  fields:
+                    - type: ITEM
+                      name: itemid
+                      value:
+                        host: Logstash
+                        key: logstash.version
+                    - type: INTEGER
+                      name: show
+                      value: '2'
+                - type: ITEM
+                  name: 'Pipeline batch size'
+                  'y': '2'
+                  width: '3'
+                  fields:
+                    - type: INTEGER
+                      name: adv_conf
+                      value: '1'
+                    - type: INTEGER
+                      name: decimal_places
+                      value: '0'
+                    - type: ITEM
+                      name: itemid
+                      value:
+                        host: Logstash
+                        key: logstash.pipeline.batch_size
+                    - type: INTEGER
+                      name: show
+                      value: '2'
+                - type: GRAPH_CLASSIC
+                  name: 'JVM uptime'
+                  'y': '4'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: JVM uptime'
+                - type: GRAPH_CLASSIC
+                  name: 'Process CPU load average'
+                  'y': '8'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Process CPU load average'
+                - type: GRAPH_CLASSIC
+                  name: 'Process CPU percentage'
+                  'y': '12'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Process CPU percentage'
+                - type: ITEM
+                  name: 'Pipeline workers'
+                  x: '3'
+                  width: '3'
+                  fields:
+                    - type: INTEGER
+                      name: adv_conf
+                      value: '1'
+                    - type: INTEGER
+                      name: decimal_places
+                      value: '0'
+                    - type: ITEM
+                      name: itemid
+                      value:
+                        host: Logstash
+                        key: logstash.pipeline.workers
+                    - type: INTEGER
+                      name: show
+                      value: '2'
+                - type: ITEM
+                  name: 'Pipeline batch delay'
+                  x: '3'
+                  'y': '2'
+                  width: '3'
+                  fields:
+                    - type: INTEGER
+                      name: adv_conf
+                      value: '1'
+                    - type: INTEGER
+                      name: decimal_places
+                      value: '0'
+                    - type: ITEM
+                      name: itemid
+                      value:
+                        host: Logstash
+                        key: logstash.pipeline.batch_delay
+                    - type: INTEGER
+                      name: show
+                      value: '2'
+                - type: GRAPH_CLASSIC
+                  name: 'JVM heap memory usage'
+                  x: '6'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: JVM heap memory usage'
+                - type: GRAPH_CLASSIC
+                  name: 'JVM non-heap memory usage'
+                  x: '6'
+                  'y': '4'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: JVM non-heap memory usage'
+                - type: GRAPH_CLASSIC
+                  name: 'JVM threads'
+                  x: '6'
+                  'y': '8'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: JVM threads'
+                - type: GRAPH_CLASSIC
+                  x: '6'
+                  'y': '12'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Flow throughput, current'
+                - type: GRAPH_CLASSIC
+                  name: 'Memory pool garbage collection count'
+                  x: '12'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Memory pool garbage collection count'
+                - type: GRAPH_CLASSIC
+                  name: 'Memory pool garbage collection time'
+                  x: '12'
+                  'y': '4'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Memory pool garbage collection time'
+                - type: GRAPH_CLASSIC
+                  name: Events
+                  x: '12'
+                  'y': '8'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Events'
+                - type: GRAPH_CLASSIC
+                  x: '12'
+                  'y': '12'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Flow throughput, last 15 minutes'
+                - type: GRAPH_CLASSIC
+                  name: 'Process memory'
+                  x: '18'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Process memory'
+                - type: GRAPH_CLASSIC
+                  name: 'Process file descriptors'
+                  x: '18'
+                  'y': '4'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Process file descriptors'
+                - type: GRAPH_CLASSIC
+                  name: 'Events duration'
+                  x: '18'
+                  'y': '8'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Events duration'
+                - type: GRAPH_CLASSIC
+                  x: '18'
+                  'y': '12'
+                  width: '6'
+                  height: '4'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: Logstash
+                        name: 'Logstash: Flow throughput, last 1 hour'
+      valuemaps:
+        - uuid: da03a252b9104be9b521d6851bdce73e
+          name: Boolean
+          mappings:
+            - value: '1'
+              newvalue: 'true'
+            - value: '0'
+              newvalue: 'false'
+    - uuid: 3d3d5ff4c6484ec18107de2af637cda3
+      template: 'Logstash main pipeline'
+      name: 'Logstash main pipeline'
+      groups:
+        - name: Templates/Logstash
+      items:
+        - uuid: 5bc7e7724b5646d29f88561b1c814979
+          name: 'Logstash main pipeline: Events duration'
+          type: TRAP
+          key: logstash.pipelines.main.events.duration_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: f9ae131886154304981a54f88a5af9e3
+          name: 'Logstash main pipeline: Events filtered'
+          type: TRAP
+          key: logstash.pipelines.main.events.filtered
+          delay: '0'
+        - uuid: b20cd725a9e14c3f94d5ed5759b8a55c
+          name: 'Logstash main pipeline: Events in'
+          type: TRAP
+          key: logstash.pipelines.main.events.in
+          delay: '0'
+        - uuid: 120b8e0e085c435588429a57d6649414
+          name: 'Logstash main pipeline: Events out'
+          type: TRAP
+          key: logstash.pipelines.main.events.out
+          delay: '0'
+        - uuid: 95931673aac447769a0cc0a35d159416
+          name: 'Logstash main pipeline: Queue push duration'
+          type: TRAP
+          key: logstash.pipelines.main.events.queue_push_duration_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 015082830537472aa0008eda5d14955e
+          name: 'Logstash main pipeline: Filter flow throughput, current'
+          type: TRAP
+          key: logstash.pipelines.main.flow.filter_throughput.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 84b313c6f9ec491189341c674375b993
+          name: 'Logstash main pipeline: Filter flow throughput, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.flow.filter_throughput.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 64fa7dbb44e64d04bb3d511405ff8611
+          name: 'Logstash main pipeline: Filter flow throughput, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.flow.filter_throughput.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 87aba840854d49bd817825ace939ca20
+          name: 'Logstash main pipeline: Filter flow throughput, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.filter_throughput.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: ca21373de64749a7bfa5d8c776a00a7f
+          name: 'Logstash main pipeline: Filter flow throughput, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.filter_throughput.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: f0aa4039addf41d296b3e5334c37668f
+          name: 'Logstash main pipeline: Filter flow throughput, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.flow.filter_throughput.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: bb10cc6da34b4aa0b8d58a9c389596e5
+          name: 'Logstash main pipeline: Input flow throughput, current'
+          type: TRAP
+          key: logstash.pipelines.main.flow.input_throughput.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 549fd2c57dbc4307b4f667c43e5bed90
+          name: 'Logstash main pipeline: Input flow throughput, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.flow.input_throughput.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 323ac1a5715e4a128a61f48fb51e3be1
+          name: 'Logstash main pipeline: Input flow throughput, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.flow.input_throughput.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 5d0ec6e49cf44f6996d229458fd6651a
+          name: 'Logstash main pipeline: Input flow throughput, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.input_throughput.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: dad0ac6daba0453a87bab09dc7b5b49d
+          name: 'Logstash main pipeline: Input flow throughput, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.input_throughput.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 383297b63934458393dc46808ecc3b11
+          name: 'Logstash main pipeline: Input flow throughput, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.flow.input_throughput.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: c0f28e1e8e634d6a886d3c28d89b95cb
+          name: 'Logstash main pipeline: Output flow throughput, current'
+          type: TRAP
+          key: logstash.pipelines.main.flow.output_throughput.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 304baef7bbaa4bb7b8806156a96d2243
+          name: 'Logstash main pipeline: Output flow throughput, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.flow.output_throughput.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: f8919f4be3ab4d50974bb372ed72103d
+          name: 'Logstash main pipeline: Output flow throughput, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.flow.output_throughput.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: f60f37f351c145f48d28dcb6630a54c5
+          name: 'Logstash main pipeline: Output flow throughput, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.output_throughput.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: ebb2e0d5793a49f0b7148d983981d517
+          name: 'Logstash main pipeline: Output flow throughput, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.output_throughput.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 2de97b6860c642e5b9bf1a66d8d11383
+          name: 'Logstash main pipeline: Output flow throughput, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.flow.output_throughput.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 6a10a35795304fe7837e70f9d7529c2d
+          name: 'Logstash main pipeline: Flow queue backpressure, current'
+          type: TRAP
+          key: logstash.pipelines.main.flow.queue_backpressure.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: ac32f25a797941deb70e4921e2273f5b
+          name: 'Logstash main pipeline: Flow queue backpressure, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.flow.queue_backpressure.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 94bba19caaa24afc8e5bddee049e6089
+          name: 'Logstash main pipeline: Flow queue backpressure, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.flow.queue_backpressure.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 0a74d0839a154d619df4cc2fcbdc39f7
+          name: 'Logstash main pipeline: Flow queue backpressure, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.queue_backpressure.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 8d4a1e8aa2024e6ab88da086a9aa0e2e
+          name: 'Logstash main pipeline: Flow queue backpressure, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.queue_backpressure.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 046103cfd5df49beb77585c9605ace15
+          name: 'Logstash main pipeline: Flow queue backpressure, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.flow.queue_backpressure.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: e9f1dc51833145129b77114217663a9b
+          name: 'Logstash main pipeline: Flow worker concurrency, current'
+          type: TRAP
+          key: logstash.pipelines.main.flow.worker_concurrency.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: b03b9ae12f2d4b1483799a83c37fa756
+          name: 'Logstash main pipeline: Flow worker concurrency, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.flow.worker_concurrency.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 63dbabea5d274c33b4d6be633e59647f
+          name: 'Logstash main pipeline: Flow worker concurrency, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.flow.worker_concurrency.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 0d7d9060334445209d48b6b278c85116
+          name: 'Logstash main pipeline: Flow worker concurrency, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.worker_concurrency.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 18971ec85c514282b18b6f27d5165716
+          name: 'Logstash main pipeline: Flow worker concurrency, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.flow.worker_concurrency.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 677dc77d0c354d139379c4d13cd49350
+          name: 'Logstash main pipeline: Flow worker concurrency, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.flow.worker_concurrency.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 0952f3d140454b128a2f1498f0b71ed4
+          name: 'Logstash main pipeline: Output #0: Bulk request failures'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.bulk_requests.failures
+          delay: '0'
+        - uuid: 3e9b843c00a5497089a9faa45d4863e5
+          name: 'Logstash main pipeline: Output #0: Bulk request successes'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.bulk_requests.successes
+          delay: '0'
+        - uuid: 5ddebc19d15e47ba9b3d1ad113dd0d02
+          name: 'Logstash main pipeline: Output #0: Documents sent successfully'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.documents.successes
+          delay: '0'
+        - uuid: cf56396bf82e4b708e2eaf7ba9017f33
+          name: 'Logstash main pipeline: Output #0: Events duration'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.events.duration_in_millis
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: d0d46d43b7b0443a8bd4559d64d232d6
+          name: 'Logstash main pipeline: Output #0: Events in'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.events.in
+          delay: '0'
+        - uuid: 0ca128a21a884b05a2ce1df1d932fb45
+          name: 'Logstash main pipeline: Output #0: Events out'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.events.out
+          delay: '0'
+        - uuid: ec3f16b07dcc457ca637079194ab4940
+          name: 'Logstash main pipeline: Output #0: Flow worker duration per event, current'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.current
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: afcec62ebd6a445abd23ab6a682b8516
+          name: 'Logstash main pipeline: Output #0: Flow worker duration per event, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: e1e4cb0dc5a443688cd5e48e36b5941d
+          name: 'Logstash main pipeline: Output #0: Flow worker duration per event, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 2c56acad43024da8a2a1bce5b6abf121
+          name: 'Logstash main pipeline: Output #0: Flow worker duration per event, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: b2d103ac89ed47bab3bea7fa089d7377
+          name: 'Logstash main pipeline: Output #0: Flow worker duration per event, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: 46854a64596e4434a2e2abcab2d5b7fb
+          name: 'Logstash main pipeline: Output #0: Flow worker duration per event, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.lifetime
+          delay: '0'
+          value_type: FLOAT
+          units: s
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - 'return value / 1000'
+        - uuid: dcb1cf290afa4170b757c964b84d2faf
+          name: 'Logstash main pipeline: Output #0: Flow worker utilization, current'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.current
+          delay: '0'
+          value_type: FLOAT
+        - uuid: aba3f9f96e824265a2de0fa650ab7beb
+          name: 'Logstash main pipeline: Output #0: Flow worker utilization, last 1 hour'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_1_hour
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 87445eb3f789433b986e5b01e8731280
+          name: 'Logstash main pipeline: Output #0: Flow worker utilization, last 1 minute'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_1_minute
+          delay: '0'
+          value_type: FLOAT
+        - uuid: a1a968a133a74109a80e5318834ca30a
+          name: 'Logstash main pipeline: Output #0: Flow worker utilization, last 5 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_5_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 73d15c01165e4b868d4ad2885bf5e19a
+          name: 'Logstash main pipeline: Output #0: Flow worker utilization, last 15 minutes'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_15_minutes
+          delay: '0'
+          value_type: FLOAT
+        - uuid: 21ebe9446b8340a49b01af4acbc38b15
+          name: 'Logstash main pipeline: Output #0: Flow worker utilization, lifetime'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.lifetime
+          delay: '0'
+          value_type: FLOAT
+        - uuid: c6d422d4ea374cc198cd097ea15e1fe4
+          name: 'Logstash main pipeline: Output #0: Name'
+          type: TRAP
+          key: logstash.pipelines.main.plugins.outputs.0.name
+          delay: '0'
+          trends: '0'
+          value_type: TEXT
+      dashboards:
+        - uuid: d117b3d691ec4736a0c8a257bb0754a0
+          name: 'Logstash main pipeline'
+          pages:
+            - widgets:
+                - type: GRAPH_CLASSIC
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Flow throughput, current'
+                - type: ITEM
+                  'y': '5'
+                  width: '3'
+                  fields:
+                    - type: ITEM
+                      name: itemid
+                      value:
+                        host: 'Logstash main pipeline'
+                        key: logstash.pipelines.main.plugins.outputs.0.name
+                    - type: INTEGER
+                      name: show
+                      value: '2'
+                - type: GRAPH_CLASSIC
+                  'y': '7'
+                  width: '6'
+                  height: '3'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Output #0: Documents sent successfully'
+                    - type: INTEGER
+                      name: show_legend
+                      value: '0'
+                - type: GRAPH_CLASSIC
+                  'y': '10'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Flow throughput, last 1 hour'
+                - type: GRAPH_CLASSIC
+                  'y': '15'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Output #0: Bulk requests'
+                - type: ITEM
+                  x: '3'
+                  'y': '5'
+                  width: '3'
+                  fields:
+                    - type: INTEGER
+                      name: adv_conf
+                      value: '1'
+                    - type: INTEGER
+                      name: decimal_places
+                      value: '0'
+                    - type: ITEM
+                      name: itemid
+                      value:
+                        host: 'Logstash main pipeline'
+                        key: logstash.pipelines.main.plugins.outputs.0.documents.successes
+                    - type: INTEGER
+                      name: show
+                      value: '2'
+                - type: GRAPH_CLASSIC
+                  x: '6'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Flow throughput, last 1 minute'
+                - type: GRAPH_CLASSIC
+                  x: '6'
+                  'y': '5'
+                  width: '9'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Output #0: Flow worker utilization'
+                - type: GRAPH_CLASSIC
+                  x: '6'
+                  'y': '10'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Flow throughput, lifetime'
+                - type: GRAPH_CLASSIC
+                  x: '12'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Flow throughput, last 5 minutes'
+                - type: GRAPH_CLASSIC
+                  x: '12'
+                  'y': '10'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Output #0: Events'
+                - type: GRAPH_CLASSIC
+                  x: '15'
+                  'y': '5'
+                  width: '9'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Output #0: Flow worker duration per event'
+                - type: GRAPH_CLASSIC
+                  x: '18'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Flow throughput, last 15 minutes'
+                - type: GRAPH_CLASSIC
+                  x: '18'
+                  'y': '10'
+                  width: '6'
+                  height: '5'
+                  fields:
+                    - type: GRAPH
+                      name: graphid
+                      value:
+                        host: 'Logstash main pipeline'
+                        name: 'Logstash main pipeline: Output #0: Events duration'
+  graphs:
+    - uuid: a93fe1e6379f4c219c0042c750a1e08c
+      name: 'Logstash: Events'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.events.in
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.events.filtered
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.events.out
+    - uuid: 1a11a49c0dea4ab48a724c667ac1fdb3
+      name: 'Logstash: Events duration'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.events.duration_in_millis
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.events.queue_push_duration_in_millis
+    - uuid: c55e28480d094f2aa717a733b0d8e7d5
+      name: 'Logstash: Flow throughput, current'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.input_throughput.current
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.filter_throughput.current
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.output_throughput.current
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.queue_backpressure.current
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.worker_concurrency.current
+    - uuid: b8f6a7ee02274334844f05fcf8029667
+      name: 'Logstash: Flow throughput, last 1 hour'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.input_throughput.last_1_hour
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.filter_throughput.last_1_hour
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.output_throughput.last_1_hour
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.queue_backpressure.last_1_hour
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.worker_concurrency.last_1_hour
+    - uuid: 828787f8980244a48b473885a54fa839
+      name: 'Logstash: Flow throughput, last 15 minutes'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.input_throughput.last_15_minutes
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.filter_throughput.last_15_minutes
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.output_throughput.last_15_minutes
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.queue_backpressure.last_15_minutes
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.flow.worker_concurrency.last_15_minutes
+    - uuid: 55a4ecfffa694ecb8e00aa2ee0135641
+      name: 'Logstash: JVM heap memory usage'
+      graph_items:
+        - color: 00BFFF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.mem.heap_committed_in_bytes
+        - sortorder: '1'
+          color: 00FFFF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.mem.heap_max_in_bytes
+        - sortorder: '2'
+          color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.mem.heap_used_in_bytes
+    - uuid: d301eff1765245b199128e83bcdbd3dc
+      name: 'Logstash: JVM non-heap memory usage'
+      graph_items:
+        - color: 00BFFF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.mem.non_heap_committed_in_bytes
+        - sortorder: '1'
+          color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.mem.non_heap_used_in_bytes
+    - uuid: fef326383a494eb9a59de8bc920d5bfd
+      name: 'Logstash: JVM threads'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.threads.count
+        - sortorder: '1'
+          color: 00FFFF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.threads.peak_count
+    - uuid: 3220a2a96fa84d9da9bb60ff58884d35
+      name: 'Logstash: JVM uptime'
+      graph_items:
+        - color: 00FFFF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.uptime_in_millis
+    - uuid: 6005b4481a6e458daccb3473d5905bfe
+      name: 'Logstash: Memory pool garbage collection count'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.gc.collectors.old.collection_count
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.gc.collectors.young.collection_count
+    - uuid: 660e81723f0d426a8a2195dfe0f6364d
+      name: 'Logstash: Memory pool garbage collection time'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.gc.collectors.old.collection_time_in_millis
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.jvm.gc.collectors.young.collection_time_in_millis
+    - uuid: 38f28f7e74cf4d60b132876334246c60
+      name: 'Logstash: Process CPU load average'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.cpu.load_average.1m
+        - sortorder: '1'
+          color: FFFF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.cpu.load_average.5m
+        - sortorder: '2'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.cpu.load_average.15m
+    - uuid: 72b76c2bfdf5473db085a0520d387f4f
+      name: 'Logstash: Process CPU percentage'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.cpu.percent
+    - uuid: 850844436cf94b80b6cd9666faf9f6c4
+      name: 'Logstash: Process file descriptors'
+      graph_items:
+        - color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.max_file_descriptors
+        - sortorder: '1'
+          color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.open_file_descriptors
+        - sortorder: '2'
+          color: 00FFFF
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.peak_open_file_descriptors
+    - uuid: d8f52501f7784b3285eebeff9bdfebad
+      name: 'Logstash: Process memory'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: Logstash
+            key: logstash.process.mem.total_virtual_in_bytes
+    - uuid: 3052d28596ec42bb95784acc0521857b
+      name: 'Logstash main pipeline: Flow throughput, current'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.input_throughput.current
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.filter_throughput.current
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.output_throughput.current
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.queue_backpressure.current
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.worker_concurrency.current
+    - uuid: 8944ab4c2c7341aa8a9fe86f386e2478
+      name: 'Logstash main pipeline: Flow throughput, last 1 hour'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.input_throughput.last_1_hour
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.filter_throughput.last_1_hour
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.output_throughput.last_1_hour
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.queue_backpressure.last_1_hour
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.worker_concurrency.last_1_hour
+    - uuid: 49e0fbb22d2c4728840268ffae0da69a
+      name: 'Logstash main pipeline: Flow throughput, last 1 minute'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.input_throughput.last_1_minute
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.filter_throughput.last_1_minute
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.output_throughput.last_1_minute
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.queue_backpressure.last_1_minute
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.worker_concurrency.last_1_minute
+    - uuid: 0cbb76c315244e948231378d5fe9ec69
+      name: 'Logstash main pipeline: Flow throughput, last 5 minutes'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.input_throughput.last_5_minutes
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.filter_throughput.last_5_minutes
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.output_throughput.last_5_minutes
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.queue_backpressure.last_5_minutes
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.worker_concurrency.last_5_minutes
+    - uuid: d233e9d4294648659e41382bf4898b54
+      name: 'Logstash main pipeline: Flow throughput, last 15 minutes'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.input_throughput.last_15_minutes
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.filter_throughput.last_15_minutes
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.output_throughput.last_15_minutes
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.queue_backpressure.last_15_minutes
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.worker_concurrency.last_15_minutes
+    - uuid: 01bc9306a76844a79e486076968983f7
+      name: 'Logstash main pipeline: Flow throughput, lifetime'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.input_throughput.lifetime
+        - sortorder: '1'
+          color: BF00FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.filter_throughput.lifetime
+        - sortorder: '2'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.output_throughput.lifetime
+        - sortorder: '3'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.queue_backpressure.lifetime
+        - sortorder: '4'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.flow.worker_concurrency.lifetime
+    - uuid: 6531804eac7646ce9006ecd754faabbf
+      name: 'Logstash main pipeline: Output #0: Bulk requests'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.bulk_requests.successes
+        - sortorder: '1'
+          color: FF4000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.bulk_requests.failures
+    - uuid: 9353e3de19ee432e9929c3735a8e5acf
+      name: 'Logstash main pipeline: Output #0: Documents sent successfully'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.documents.successes
+    - uuid: 87a3b5fd5e134b3dbe856b23f07d8676
+      name: 'Logstash main pipeline: Output #0: Events'
+      graph_items:
+        - color: FF0080
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.events.in
+        - sortorder: '1'
+          color: 0080FF
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.events.out
+    - uuid: ffc6beda0aca416689901fd5a512470a
+      name: 'Logstash main pipeline: Output #0: Events duration'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.events.duration_in_millis
+    - uuid: e7c227ed5ac54e4ba3d53fa435cae6d9
+      name: 'Logstash main pipeline: Output #0: Flow worker duration per event'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.current
+        - sortorder: '1'
+          color: BFFF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_1_minute
+        - sortorder: '2'
+          color: FFFF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_5_minutes
+        - sortorder: '3'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_15_minutes
+        - sortorder: '4'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.last_1_hour
+        - sortorder: '5'
+          color: FF4000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_millis_per_event.lifetime
+    - uuid: 141cbdde537f4c8dab7a997e6d9577cd
+      name: 'Logstash main pipeline: Output #0: Flow worker utilization'
+      graph_items:
+        - color: 00FF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.current
+        - sortorder: '1'
+          color: BFFF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_1_minute
+        - sortorder: '2'
+          color: FFFF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_5_minutes
+        - sortorder: '3'
+          color: FFBF00
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_15_minutes
+        - sortorder: '4'
+          color: FF8000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.last_1_hour
+        - sortorder: '5'
+          color: FF4000
+          calc_fnc: ALL
+          item:
+            host: 'Logstash main pipeline'
+            key: logstash.pipelines.main.plugins.outputs.0.flow.worker_utilization.lifetime
